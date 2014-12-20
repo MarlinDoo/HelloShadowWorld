@@ -27,3 +27,7 @@ Shadow DOM是指浏览器的一种能力，它允许在文档（document）渲�
         "hola, sombra mundo!"
       "Hello, world!"
     </button>
+
+## Screenshot
+
+![ShadowDOM Sample](http://www.marlindoo.com/assets/images/ShadowDOMSample.png "ShadowDOM Sample")
