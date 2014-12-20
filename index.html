@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shadow Sample</title>
+</head>
+<body>
+  <div id="nameTag">Angular</div>
+  <p>
+    <label for="NewName">New name:</label>
+    <input name="NewName" value="Marionette">
+    <button onclick="updateClicked('#nameTag', 'input[name=NewName]');">Update</button>
+  </p>
+  <template id="nameTagTemplate">
+  <style type="text/css">
+  .outer {
+    border: 2px solid #000066;
+    border-radius: 1em;
+    background: #003366;
+    font-size: 20pt;
+    width: 12em;
+    height: 7em;
+    text-align: center;
+  }
+  .boilerplate {
+    color: white;
+    font-family: sans-serif;
+    padding: 0.5em;
+  }
+  .name {
+    color: black;
+    background: white;
+    font-family: "Marker Felt", cursive;
+    font-size: 45pt;
+    padding-top: 0.2em;
+  }
+  </style>
+  <div class="outer">
+    <div class="boilerplate">
+      Hi! My name is
+    </div>
+    <div class="name">
+      <content></content>
+    </div>
+    <div class="boilerplate">
+      这就是我的名字。
+    </div>
+  </div>
+  </template>
+  <script>
+
+    function updateClicked(nameTagSelector, textBoxSelector) {
+      var text = document.querySelector(textBoxSelector);
+      document.querySelector(nameTagSelector).textContent = text.value;
+      text.value = '';
+      text.focus();
+    }
+
+    document.querySelector('#nameTag').textContent = 'Backbone';
+    var shadow = document.querySelector('#nameTag').createShadowRoot();
+    var template = document.querySelector('#nameTagTemplate');
+    var clone = document.importNode(template.content, true);
+    shadow.appendChild(clone);
+  </script>
+</body>
+</html>
