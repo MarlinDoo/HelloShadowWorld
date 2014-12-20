@@ -28,6 +28,9 @@ Shadow DOM是指浏览器的一种能力，它允许在文档（document）渲�
       "Hello, world!"
     </button>
 
-## Screenshot
+## Screenshots
 
 ![ShadowDOM Sample](http://www.marlindoo.com/assets/images/ShadowDOMSample.png "ShadowDOM Sample")
+
+## Compatibility table for support of Shadow DOM in desktop and mobile browsers
+![Compatibility table](http://www.marlindoo.com/assets/images/SupportOfShadowDOM.png "Compatibility table")
